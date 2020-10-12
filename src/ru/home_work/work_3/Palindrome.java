@@ -1,5 +1,6 @@
-package ru.home_work.work_3_1;
+package ru.home_work.work_3;
 
+//#3.1
 public class Palindrome {
     public static void main(String[] args) {
         System.out.println(IsPalindrome("ТопоТ"));
