@@ -9,8 +9,7 @@ public class PrintBorderedMessage {
     static String msg;
 
     public static void main(String[] args) {
-        boolean flag = true;
-        while (flag) {
+        while (true) {
             getInput();
             debug();
             if (msg.length() + 2 > width || height < 3) {
@@ -20,12 +19,13 @@ public class PrintBorderedMessage {
             }
             debug();
             draw(width, height, msg);
-            flag = !flag;
+            break;
         }
     }
 
     public static void draw(int w, int h, String t) {
-        int tLineNum = h / 2 + 1;
+        int tLineNum = h % 2 > 0 ? h / 2 + 1 : h / 2;
+        System.out.println(tLineNum);
         int spaces = w - t.length() - 2;
         spaces = (spaces - spaces % 2) / 2;
         String emptyRow = "*" + " ".repeat(w - 2) + "*";
@@ -44,10 +44,22 @@ public class PrintBorderedMessage {
 
     public static void getInput() {
         Scanner input = new Scanner(System.in);
-        System.out.print("Введите ширину рамки: ");
-        width = input.nextInt();
         System.out.print("Введите высоту рамки: ");
-        height = input.nextInt();
+        if (input.hasNextInt()) {
+            height = input.nextInt();
+        } else {
+            System.out.println("Высота должна быть целым числом");
+            getInput();
+            return;
+        }
+        System.out.print("Введите ширину рамки: ");
+        if (input.hasNextInt()) {
+            width = input.nextInt();
+        } else {
+            System.out.println("Ширина должна быть целым числом");
+            getInput();
+            return;
+        }
         System.out.print("Введите сообщение: ");
         msg = input.next();
     }
