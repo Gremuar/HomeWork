@@ -2,7 +2,11 @@ package ru.homework.work5and6.zoo.animal;
 
 import static java.lang.Thread.sleep;
 
-public class Lion extends BaseAnimal {
+import ru.homework.work5and6.zoo.interfaces.Fishing;
+import ru.homework.work5and6.zoo.interfaces.ToSleep;
+
+
+public class Lion extends BaseAnimal implements ToSleep {
   private Boolean sleep;
 
   public Lion(String name, String type, String color, Integer age) {

@@ -93,9 +93,8 @@ public class Aviary {
     return curr;
   }
 
-  public Aviary printList() {
+  public void printList() {
     System.out.println(list);
-    return this;
   }
 
   @Override

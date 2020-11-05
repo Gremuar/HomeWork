@@ -3,8 +3,10 @@ package ru.homework.work5and6.zoo.animal;
 import static java.lang.Thread.sleep;
 
 import ru.homework.work5and6.zoo.interfaces.Eating;
+import ru.homework.work5and6.zoo.interfaces.Fishing;
+import ru.homework.work5and6.zoo.interfaces.ToSleep;
 
-public class Bear extends BaseAnimal implements Eating {
+public class Bear extends BaseAnimal implements Eating, Fishing, ToSleep {
   private Boolean sleep;
   private Boolean eats;
 
