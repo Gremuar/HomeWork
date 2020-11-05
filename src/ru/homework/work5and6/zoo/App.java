@@ -1,6 +1,7 @@
 package ru.homework.work5and6.zoo;
 
 
+import java.util.HashMap;
 import ru.homework.work5and6.zoo.animal.Aviary;
 import ru.homework.work5and6.zoo.animal.Bear;
 import ru.homework.work5and6.zoo.animal.Gull;
@@ -133,5 +134,16 @@ public class App {
       System.out.println(e.getMessage());
     }
     zone1.printList();
+    /*
+    #7.1
+    Создать вольеры (не один!). Вольеров должно быть ограниченное количество.
+    Если добавляется животное в несуществующий вольер - должно отработать исключение.
+     */
+    var zones = new HashMap<String, Aviary>();
+    zones.put("Zone1", zone1);
+    zones.put("Zone2", zone2);
+    zones.put("Zone3", zone3);
+    zones.get("Zone4").add(new Wolf("Woo", "wolf", "gray", 15));
+    //Технически, все по заданию)
   }
 }
