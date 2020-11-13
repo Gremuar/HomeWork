@@ -54,13 +54,12 @@ public class IntComporator {
         if (cache.containsKey(val)) {
           return cache.get(val);
         }
-        int divCount = 2;
+        int divCount = 0;
         for (int i = 2; i < val; i++) {
-          if (val % i == 0 && BigInteger.valueOf(i).isProbablePrime((int) Math.log(i))) {
+          if (val % i == 0) {
             divCount++;
           }
         }
-        divCount = divCount > 2 ? divCount - 1 : divCount;
         cache.put(val, divCount);
         return divCount;
       }
